@@ -55,30 +55,5 @@
         
 
 
-    /**
-     * POST RESULT OPERATIONS
-     */
-    post {
-        failure {
-            mail bcc: '',
-                    cc: '',
-                    replyTo: '',
-                    mimeType: "text/html",
-                    from: env.GIT_AUTHOR_EMAIL,
-                    to: env.team_email,
-                    subject: 'Batch Event Manager Snapshot: FAIL',
-                    body: "Batch Event Manager pipeline SNAPSHOT fail please see: <a href=\"${env.BUILD_URL}\">${env.BUILD_URL}</a> <br /> <br /> <img src=\"http://oi67.tinypic.com/affpg8.jpg\" />"
-        }
-        fixed {
-            mail bcc: '',
-                    cc: '',
-                    replyTo: '',
-                    mimeType: "text/html",
-                    from: env.GIT_AUTHOR_EMAIL,
-                    to: env.team_email,
-                    subject: 'Batch Event Manager Snapshot: Fixed',
-                    body: "Batch Event Manager pipeline SNAPSHOT is back to normal! <br /> <br />"
-        }
-    }
 }
 }
