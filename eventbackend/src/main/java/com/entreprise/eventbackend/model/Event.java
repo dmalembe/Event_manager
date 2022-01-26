@@ -1,5 +1,6 @@
 package com.entreprise.eventbackend.model;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,6 +14,7 @@ import javax.persistence.Table;
 
 import com.entreprise.eventbackend.enumeration.Category;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,7 +22,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "event")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Event {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -39,4 +43,5 @@ public class Event {
 	
 	@Column(name = "capacity")
 	private int capacity;
+	
 }
